@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chabocer Labs</title>
+    <style>
+        body {
+            font-family: Integral CF;
+            background-color: #0c0c0c;
+            color: #e0e0e0;
+            text-align: center;
+            padding: 50px;
+            margin: 0;
+        }
+
+        h1 {
+            color: #ffffff;
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin: 0 auto 30px auto;
+        }
+
+        .highlight {
+            color: #1466ff;
+        }
+
+        nav {
+            background-color: #222222;
+            padding: 15px 0;
+            margin-bottom: 30px;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 1.1em;
+        }
+
+        nav ul li a:hover {
+            color: #1466ff;
+        }
+
+        main {
+            padding: 20px;
+            text-align: left;
+            max-width: 960px;
+            margin: 0 auto;
+        }
+
+        .product-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .product-item {
+            background-color: #141414;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+
+        .product-item h3 {
+            color: #ffffff;
+            margin-top: 0;
+        }
+
+        .product-item img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+
+        .product-item ul {
+            list-style: none;
+            padding: 0;
+            margin-bottom: 15px;
+        }
+
+        .product-item li {
+            margin-bottom: 5px;
+            color: #e0e0e0;
+        }
+
+        .color-selector {
+            display: flex;
+            gap: 15px;
+            margin-top: 10px;
+            justify-content: center;
+        }
+
+        .color-circle.selected {
+            border: 3px solid #1466ff;
+            transform: scale(1.1);
+        }
+
+        .price {
+            color: #1466ff;
+            font-size: 1.5em;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #1466ff;
+            color: #000000;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #ffffff;
+            color: #000000;
+        }
+
+        .color-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            cursor: pointer;
+            border: 3px solid transparent;
+            transition: border 0.3s, transform 0.2s;
+        }
+
+        .color-circle.black {
+            background-color: #111;
+        }
+
+        .color-circle.white {
+            background-color: #f0f0f0;
+        }
+
+        .tiktok-link {
+            color: #1466ff;
+            text-decoration: none;
+        }
+
+        .tiktok-link:hover {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to <span class="highlight">Chabocer Labs!</span></h1>
+        <p>Gaming PCs where you can get <span class="highlight">value</span>, <span class="highlight">performance</span>, and <span class="highlight">aesthetics</span> all in one PC!</p>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#" id="productsLink">Prebuilt PCs</a></li>
+            <li><a href="#" id="aboutUsLink">About Us</a></li>
+            <li><a href="#" id="contactLink">Contact</a></li>
+            <li><a href="#" id="customPCsLink">Custom PCs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h2>The Collection:</h2>
+
+        <div class="product-grid">
+            <div class="product-item">
+                <img src="c:\Users\jaide\Downloads\0158077_0.jpeg" alt="Chabocer Core Gaming PC" width="300">
+                <h3 class="highlight" style="font-size: 1.5em;">Level 1 Core</h3>
+                <ul style="font-size: 1em;">
+                    <li><span class="highlight">CPU:</span> AMD Ryzen 5 5500</li>
+                    <li><span class="highlight">GPU:</span> AMD Radeon RX 6600</li>
+                    <li><span class="highlight">RAM:</span> 16GB 3200MHz DDR4</li>
+                    <li><span class="highlight">Storage:</span> Crucial P3 Plus 500GB</li>
+                </ul>
+                <p class="price">$1099</p>
+                <a href="product-core.html" class="button">View Details</a>
+            </div>
+
+            <div class="product-item">
+                <img id="surgeImage" src="c:\Users\jaide\Downloads\0184332_0.jpeg" alt="Chabocer Surge Gaming PC" width="300">
+                <h3 class="highlight" style="font-size: 1.5em;">Level 2 Surge</h3>
+                <div class="color-selector">
+                    <div class="color-circle black selected" onclick="selectColor('black')"></div>
+                    <div class="color-circle white" onclick="selectColor('white')"></div>
+                </div>
+                <ul style="font-size: 1em;">
+                    <li><span class="highlight">CPU:</span> AMD Ryzen 5 5600x</li>
+                    <li><span class="highlight">GPU:</span> Nvidia RTX 4060 OC</li>
+                    <li><span class="highlight">RAM:</span> 16GB 3600MHz DDR4</li>
+                    <li><span class="highlight">Storage:</span> Crucial P3 Plus 1TB</li>
+                </ul>
+                <p id="surgePrice" class="price">$1399</p>
+                <a href="product-surge.html" class="button">View Details</a>
+            </div>
+
+            <div class="product-item hidden">
+                <img src="images/0184332_0.jpeg" alt="Chabocer Overdrive Gaming PC" width="300">
+                <h3 class="highlight" style="font-size: 1.5em;">Level 3 Overdrive</h3>
+                <ul style="font-size: 1em;">
+                    <li><span class="highlight">CPU:</span> AMD Ryzen 5 7500F</li>
+                    <li><span class="highlight">GPU:</span> NVIDIA RTX 4060 Ti</li>
+                    <li><span class="highlight">RAM:</span> 32GB 6000MHz DDR5</li>
+                    <li><span class="highlight">Storage:</span> Crucial P3 Plus 1TB</li>
+                </ul>
+                <p class="price">$1999</p>
+                <a href="product-overdrive.html" class="button">View Details</a>
+            </div>
+        </div>
+    </main>
+
+    <script>
+       function selectColor(color) {
+    const surgeImage = document.getElementById('surgeImage');
+    const surgePrice = document.getElementById('surgePrice');
+    const colorCircles = document.querySelectorAll('.color-selector .color-circle');
+
+    colorCircles.forEach(circle => circle.classList.remove('selected'));
+
+    const selectedCircle = document.querySelector(`.color-circle.${color}`);
+    if (selectedCircle) {
+        selectedCircle.classList.add('selected');
+    }
+
+    if (color === 'black') {
+        surgeImage.src = "images/0184332_0.jpeg";
+        surgePrice.textContent = "$1399";
+    } else if (color === 'white') {
+        surgeImage.src = "images/0184341_0.jpeg"; // Replace with correct white image path
+        surgePrice.textContent = "$1449"; // Updated price for white
+    }
+ }
+        document.addEventListener('DOMContentLoaded', () => {
+            const productsLink = document.getElementById('productsLink');
+            const aboutUsLink = document.getElementById('aboutUsLink');
+            const contactLink = document.getElementById('contactLink');
+            const customPCsLink = document.getElementById('customPCsLink');
+            const mainContent = document.querySelector('main');
+            const originalProductGridHTML = document.querySelector('.product-grid').outerHTML;
+
+            productsLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                mainContent.innerHTML = `
+                    <h2>The Collection:</h2>
+                    ${originalProductGridHTML}
+                `;
+            });
+
+            aboutUsLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                mainContent.innerHTML = `
+                    <h2>About Us:</h2>
+                    <p>Welcome to <span class="highlight">Chabocer Labs</span>, the one and only PC store you'll ever need. We are a very small company run by content creator <a href="https://www.tiktok.com/@techchabocer" target="_blank" class="tiktok-link">@techchabocer</a>.</p>
+                    <p>At <span class="highlight">Chabocer Labs</span>, we strive to give the best quality possible—whether it’s cable management or high-quality products—we aim to do our best!</p>
+                    <p>We offer customization, accept requests, and strive for fast and secure shipping. If you have any issues or questions, email our support page.</p>
+                    <p>Thank you for choosing <span class="highlight">Chabocer Labs</span> — we’re excited to help you elevate your gaming experience!</p>
+                `;
+            });
+
+            contactLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                mainContent.innerHTML = `
+                    <h2>Contact / Support:</h2>
+                    <p>Need help? If you have any problems or questions, please email: <span class="highlight">chabocerlabs@gmail.com</span></p>
+                    <p>We will reply as soon as we can. Thank you for your patience, and thank you for reaching out!</p>
+                `;
+            });
+
+            customPCsLink.addEventListener('click', (event) => {
+                event.preventDefault();
+                mainContent.innerHTML = `
+                    <h2>Custom PCs:</h2>
+                    <p>This option isn’t available yet — we are working on offering fully custom-built PCs in the near future!</p>
+                `;
+            });
+        });
+    </script>
+</body>
+</html>
